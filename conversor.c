@@ -4,11 +4,11 @@ void comprimento() {
   printf("1 - Conversão de unidade de Comprimento");
 }
 void unidadesDeVolume() {
-    int operacao;
+    int operacao; // João Vitor Soares Amorim
     float volume, resultado;
 
     do {
-        
+        // Menu de opções
         printf("Escolha uma conversao de unidade de volume:\n");
         printf("1 - Litros para Mililitros\n");
         printf("2 - Mililitros para Litros\n");
@@ -21,26 +21,26 @@ void unidadesDeVolume() {
             break;
         }
 
-        
+        // Solicita o volume a ser convertido
         printf("Digite o volume: ");
         scanf("%f", &volume);
 
-        
+        // Realiza a conversão escolhida
         switch (operacao) {
             case 1:
-                resultado = volume * 1000; 
+                resultado = volume * 1000; // 1 litro = 1000 mililitros
                 printf("Resultado: %.2f mililitros\n", resultado);
                 break;
             case 2:
-                resultado = volume / 1000; 
+                resultado = volume / 1000; // 1000 mililitros = 1 litro
                 printf("Resultado: %.2f litros\n", resultado);
                 break;
             case 3:
-                resultado = volume / 1000; 
+                resultado = volume / 1000; // 1000 litros = 1 metro cúbico
                 printf("Resultado: %.2f metros cúbicos\n", resultado);
                 break;
             case 4:
-                resultado = volume * 1000; 
+                resultado = volume * 1000; // 1 metro cúbico = 1000 litros
                 printf("Resultado: %.2f litros\n", resultado);
                 break;
             default:
@@ -80,10 +80,10 @@ int main() {
     /* code */
     break;
   
-  case 3:
-   unidadesDeVolume();
+  case 3: 
+   unidadesDeVolume(); 
     break;
-
+/*João Vitor Soares Amorim*/ 
   case 4:
     /* code */
     break;
