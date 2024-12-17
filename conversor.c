@@ -1,56 +1,106 @@
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 void comprimento() {
   printf("1 - Conversão de unidade de Comprimento");
 }
+
 void unidadesDeVolume() {
-    int operacao; // João Vitor Soares Amorim
-    float volume, resultado;
+  int operacao; // João Vitor Soares Amorim
+  float volume, resultado;
+ do {
+      // Menu de opções
+      printf("Escolha uma conversao de unidade de volume:\n");
+      printf("1 - Litros para Mililitros\n");
+      printf("2 - Mililitros para Litros\n");
+      printf("3 - Litros para Metros Cúbicos\n");
+      printf("4 - Metros Cúbicos para Litros\n");
+      printf("0 - Sair\n");
+      scanf("%d", &operacao);
 
-    do {
-        // Menu de opções
-        printf("Escolha uma conversao de unidade de volume:\n");
-        printf("1 - Litros para Mililitros\n");
-        printf("2 - Mililitros para Litros\n");
-        printf("3 - Litros para Metros Cúbicos\n");
-        printf("4 - Metros Cúbicos para Litros\n");
-        printf("0 - Sair\n");
-        scanf("%d", &operacao);
+      if (operacao == 0) {
+          break;
+      }
 
-        if (operacao == 0) {
-            break;
-        }
+      // Solicita o volume a ser convertido
+      printf("Digite o volume: ");
+      scanf("%f", &volume);
 
-        // Solicita o volume a ser convertido
-        printf("Digite o volume: ");
-        scanf("%f", &volume);
+      // Realiza a conversão escolhida
+      switch (operacao) {
+          case 1:
+              resultado = volume * 1000; // 1 litro = 1000 mililitros
+              printf("Resultado: %.2f mililitros\n", resultado);
+              break;
+          case 2:
+              resultado = volume / 1000; // 1000 mililitros = 1 litro
+              printf("Resultado: %.2f litros\n", resultado);
+              break;
+          case 3:
+              resultado = volume / 1000; // 1000 litros = 1 metro cúbico
+              printf("Resultado: %.2f metros cúbicos\n", resultado);
+              break;
+          case 4:
+              resultado = volume * 1000; // 1 metro cúbico = 1000 litros
+              printf("Resultado: %.2f litros\n", resultado);
+              break;
+          default:
+              printf("Operacao invalida. Tente novamente.\n");
+              break;
+      }
 
-        // Realiza a conversão escolhida
-        switch (operacao) {
-            case 1:
-                resultado = volume * 1000; // 1 litro = 1000 mililitros
-                printf("Resultado: %.2f mililitros\n", resultado);
-                break;
-            case 2:
-                resultado = volume / 1000; // 1000 mililitros = 1 litro
-                printf("Resultado: %.2f litros\n", resultado);
-                break;
-            case 3:
-                resultado = volume / 1000; // 1000 litros = 1 metro cúbico
-                printf("Resultado: %.2f metros cúbicos\n", resultado);
-                break;
-            case 4:
-                resultado = volume * 1000; // 1 metro cúbico = 1000 litros
-                printf("Resultado: %.2f litros\n", resultado);
-                break;
-            default:
-                printf("Operacao invalida. Tente novamente.\n");
-                break;
-        }
+  } while (operacao != 0);
 
-    } while (operacao != 0);
+  printf("Conversor de volume encerrado.\n");
+}
 
-    printf("Conversor de volume encerrado.\n");
+
+void dados(){
+  int diff;
+  int indexIn = -1;
+  int indexOut = -1;
+  double data, result;
+  char typeIn[3], typeOut[3];
+  const char* units[] = {"b", "B", "KB", "MB", "GB", "TB"};
+
+  printf("Digite a uniadade de entrada - b, B, KB, MB, GB, TB: \n");
+  scanf("%s", &typeIn);
+
+  printf("Digite o seu valor á ser convertido: ");
+  scanf("%lf", &data);
+
+  printf("Digite para qual unidade deseja converter - b, B, KB, MB, GB, TB: \n");
+  scanf("%s", &typeOut);
+
+  for (int i = 0; i < 6; i++) {
+    if (strcmp(typeIn, units[i]) == 0){
+      indexIn = i;
+    }
+    if (strcmp(typeOut, units[i]) == 0) {
+      indexOut = i;
+    }
+  }
+
+  if (indexIn == -1 || indexOut == -1) {
+    printf("Valor invalido\n");
+    exit(1);
+  }
+
+  diff = indexIn - indexOut;
+
+  if(strcmp(typeIn, "b") == 0) {
+    diff += 1;
+    result = data / 8 * pow(1024, diff);
+  }else if(strcmp(typeOut, "b") == 0) {
+    diff -= 1;
+    result = data * pow(1024, diff) * 8;
+  }else {
+    result = data * pow(1024, diff);
+  }
+
+  printf("%.5lf %s é igual a %.5lf %s\n", data, typeIn, result, typeOut);
 }
 
 int main() {
@@ -105,7 +155,7 @@ int main() {
     break;
 
   case 9:
-    /* code */
+    dados();
     break;
 
   default:
