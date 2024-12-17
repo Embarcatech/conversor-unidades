@@ -1,7 +1,56 @@
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 void comprimento() {
   printf("1 - Conversão de unidade de Comprimento");
+}
+
+void dados(){
+  int diff;
+  int indexIn = -1;
+  int indexOut = -1;
+  double data, result;
+  char typeIn[3], typeOut[3];
+  const char* units[] = {"b", "B", "KB", "MB", "GB", "TB"};
+
+  printf("Digite a uniadade de entrada - b, B, KB, MB, GB, TB: \n");
+  scanf("%s", &typeIn);
+
+  printf("Digite o seu valor á ser convertido: ");
+  scanf("%lf", &data);
+
+  printf("Digite para qual unidade deseja converter - b, B, KB, MB, GB, TB: \n");
+  scanf("%s", &typeOut);
+
+  for (int i = 0; i < 6; i++) {
+    if (strcmp(typeIn, units[i]) == 0){
+      indexIn = i;
+    }
+    if (strcmp(typeOut, units[i]) == 0) {
+      indexOut = i;
+    }
+  }
+
+  if (indexIn == -1 || indexOut == -1) {
+    printf("Valor invalido\n");
+    exit(1);
+  }
+
+  diff = indexIn - indexOut;
+
+  if(strcmp(typeIn, "b") == 0) {
+    diff += 1;
+    result = data / 8 * pow(1024, diff);
+  }else if(strcmp(typeOut, "b") == 0) {
+    diff -= 1;
+    result = data * pow(1024, diff) * 8;
+  }else {
+    result = data * pow(1024, diff);
+  }
+
+  printf("%.5lf %s é igual a %.5lf %s\n", data, typeIn, result, typeOut);
 }
 
 
@@ -57,7 +106,7 @@ int main() {
     break;
 
   case 9:
-    /* code */
+    dados();
     break;
 
   default:
