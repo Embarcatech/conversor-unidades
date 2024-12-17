@@ -4,7 +4,39 @@
 #include <stdio.h>
 
 void comprimento() {
-  printf("1 - Conversão de unidade de Comprimento");
+  double data, result;
+  int indexIn = -1, indexOut = -1;
+  char typeIn[3], typeOut[3];
+  const char* units[] = {"m", "dm", "cm", "mm"};
+
+  printf("1 - Conversão de unidade de Comprimento\n");
+  printf("Digite a uniadade de entrada - m, cm, mm: \n");
+  scanf("%s", &typeIn);
+
+  printf("Digite o seu valor á ser convertido: ");
+  scanf("%lf", &data);
+
+  printf("Digite para qual unidade deseja converter - m, cm, mm: \n");
+  scanf("%s", &typeOut);
+
+  for (int i = 0; i < 4; i++) {
+    if (strcmp(typeIn, units[i]) == 0){
+      indexIn = i;
+    }
+    if (strcmp(typeOut, units[i]) == 0) {
+      indexOut = i;
+    }
+  }
+
+  if (indexIn == -1 || indexOut == -1) {
+    printf("Unidade de medida inválida\n");
+    exit(1);
+  }
+
+  int diff = indexOut - indexIn;
+  result = data * pow(10, diff);
+  printf("%.4lf %s é igual a %.4lf %s\n", data, typeIn, result, typeOut);
+
 }
 
 void unidadesDeVolume() {
