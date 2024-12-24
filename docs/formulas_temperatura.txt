@@ -1,6 +1,6 @@
 Autor responsavel pela programação basica: Hugo S. dias
 
-Fórmulas matemáticas para calcular temperaturas:
+Fórmulas matemáticas para calcular a conversão entre padrão de medição de temperaturas:
 
 Converter Celsius para Kelvin
 TK = TC + 273, onde TK é a temperatura em Kelvin e TC é a temperatura em graus Celsius. 
@@ -8,7 +8,4 @@ Por exemplo, para converter 40° C em K, a fórmula é TK = 40 + 273, resultando
 
 Converter Fahrenheit para Celsius
 C = 5/9 x (F – 32), onde C é a temperatura em graus Celsius e F é a temperatura em graus Fahrenheit. 
-
-Calcular a temperatura média
-Soma-se as temperaturas e divide o resultado pela quantidade de dias analisados. 
-Por exemplo, se as temperaturas encontradas foram 28°, 32° e 25°C, a temperatura média é (28° + 32° + 25°) : 3 = 27,1°C. 
+ 
