@@ -11,13 +11,13 @@ void comprimento() {
 
   printf("1 - Conversão de unidade de Comprimento\n");
   printf("Digite a uniadade de entrada - m, cm, mm: \n");
-  scanf("%s", &typeIn);
+  scanf("%s", typeIn);
 
   printf("Digite o seu valor á ser convertido: ");
   scanf("%lf", &data);
 
   printf("Digite para qual unidade deseja converter - m, cm, mm: \n");
-  scanf("%s", &typeOut);
+  scanf("%s", typeOut);
 
   for (int i = 0; i < 4; i++) {
     if (strcmp(typeIn, units[i]) == 0){
@@ -99,13 +99,13 @@ void dados(){
   const char* units[] = {"b", "B", "KB", "MB", "GB", "TB"};
 
   printf("Digite a uniadade de entrada - b, B, KB, MB, GB, TB: \n");
-  scanf("%s", &typeIn);
+  scanf("%s", typeIn);
 
   printf("Digite o seu valor á ser convertido: ");
   scanf("%lf", &data);
 
   printf("Digite para qual unidade deseja converter - b, B, KB, MB, GB, TB: \n");
-  scanf("%s", &typeOut);
+  scanf("%s", typeOut);
 
   for (int i = 0; i < 6; i++) {
     if (strcmp(typeIn, units[i]) == 0){
@@ -284,8 +284,64 @@ do{
         }
     }
     printf ("O resultado da conversao eh: %.3f",resultado);
-    
 }
+
+void unidadesDeArea() {
+    int operacao;
+    float valor, resultado;
+
+    do {
+        printf("\nEscolha uma conversão de unidade de área:\n");
+        printf("1 - Metros quadrados (m²) para Decímetros quadrados (dm²)\n");
+        printf("2 - Metros quadrados (m²) para Centímetros quadrados (cm²)\n");
+        printf("3 - Metros quadrados (m²) para Milímetros quadrados (mm²)\n");
+        printf("4 - Decímetros quadrados (dm²) para Metros quadrados (m²)\n");
+        printf("5 - Centímetros quadrados (cm²) para Metros quadrados (m²)\n");
+        printf("6 - Milímetros quadrados (mm²) para Metros quadrados (m²)\n");
+        printf("0 - Sair\n");
+        printf("Digite a opção desejada: ");
+        scanf("%d", &operacao);
+
+        if (operacao == 0) {
+            printf("Conversor de área encerrado.\n");
+            break;
+        }
+
+        printf("Digite o valor a ser convertido: ");
+        scanf("%f", &valor);
+
+        switch (operacao) {
+            case 1: // m² para dm²
+                resultado = valor * 100;
+                printf("%.2f m² é igual a %.2f dm²\n", valor, resultado);
+                break;
+            case 2: // m² para cm²
+                resultado = valor * 10000;
+                printf("%.2f m² é igual a %.2f cm²\n", valor, resultado);
+                break;
+            case 3: // m² para mm²
+                resultado = valor * 1000000;
+                printf("%.2f m² é igual a %.2f mm²\n", valor, resultado);
+                break;
+            case 4: // dm² para m²
+                resultado = valor / 100;
+                printf("%.2f dm² é igual a %.2f m²\n", valor, resultado);
+                break;
+            case 5: // cm² para m²
+                resultado = valor / 10000;
+                printf("%.2f cm² é igual a %.2f m²\n", valor, resultado);
+                break;
+            case 6: // mm² para m²
+                resultado = valor / 1000000;
+                printf("%.2f mm² é igual a %.6f m²\n", valor, resultado);
+                break;
+            default:
+                printf("Operação inválida. Por favor, tente novamente.\n");
+                break;
+        }
+    } while (operacao != 0);
+}
+
 int main() {
   system("chcp 65001>NULL");
 
@@ -331,7 +387,7 @@ int main() {
     break;
 
   case 7:
-    /* code */
+    unidadesDeArea(); /* Vinícius Kauan Santos da Cruz */
     break;
 
   case 8:
