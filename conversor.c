@@ -191,7 +191,101 @@ void massa() {
             break;
     }
 }
+void energia(){
+    int escolha_entrada, escolha_saida;
+    double valor;
+    double resultado;
+  
+do{
+    printf("Escolha a unidade de entrada:\n");
+    printf("1 - Watts (W)\n");
+    printf("2 - Quilowatts (kW)\n");
+    printf("3 - Cavalo-vapor (CV)\n");
+    printf("4 - Horse Power (HP)\n");
+    printf("Digite o numero da opcao de entrada: ");
+    scanf("%d", &escolha_entrada);
+    if (escolha_entrada>4){
+      printf ("Escolha indisponivel\n");
+    }
+}while(escolha_entrada>4);
+do{
+    printf("Escolha a unidade de saida:\n");
+    printf("1 - Watts (W)\n");
+    printf("2 - Quilowatts (kW)\n");
+    printf("3 - Cavalo-vapor (CV)\n");
+    printf("4 - Horse Power (HP)\n");
+    printf("Digite o numero da opcao de saida: ");
+    scanf("%d", &escolha_saida);
+    if (escolha_saida>4){
+      printf ("Escolha indisponivel\n");
+    }
+}while(escolha_saida>4);
+    printf("Digite o valor:");
+    scanf("%lf", &valor);
 
+    if (escolha_entrada==1){
+        if (escolha_saida==1){
+        resultado=valor;
+        }
+
+        if (escolha_saida==2){
+            resultado = valor/1000;
+            
+        }
+        if (escolha_saida==3){
+            resultado = valor/735.5;
+            
+        }
+        if (escolha_saida==4){
+            resultado = valor/745.7;
+            
+        }
+    }
+    else if (escolha_entrada==2){
+        if (escolha_saida==1){
+            resultado = valor*1000;
+    }
+    if (escolha_saida==2){
+        resultado = valor;
+    }
+    if (escolha_saida==3){
+        resultado = valor*1.36;
+    }
+    if (escolha_saida==4){
+        resultado = valor*1.34;
+    }
+    }
+    else if (escolha_entrada==3){
+    if (escolha_saida==1){
+        resultado = valor*735.5;
+    }
+    if (escolha_saida==2){
+        resultado=(valor*735.5)/1000;
+    }
+    if (escolha_saida==3){
+        resultado = valor;
+    }
+    if (escolha_saida==4){
+        resultado=(valor*735.5)/745.7;
+    }
+    }
+    if (escolha_entrada==4){
+        if (escolha_saida==1){
+            resultado = valor*745.7;
+        }
+        if (escolha_saida==2){
+            resultado = (valor*745.7)/1000;
+        }
+        if(escolha_saida==3){
+            resultado = (valor*745.7)/735.5;
+        }
+        if (escolha_saida==4){
+            resultado = valor;
+        }
+    }
+    printf ("O resultado da conversao eh: %.3f",resultado);
+    
+}
 int main() {
   system("chcp 65001>NULL");
 
@@ -232,7 +326,8 @@ int main() {
     break;
 
   case 6:
-    /* code */
+  energia();
+    /* Alinne de Souza Santos Castro*/
     break;
 
   case 7:
