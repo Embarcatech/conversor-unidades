@@ -89,7 +89,6 @@ void unidadesDeVolume() {
     printf("Conversor de volume encerrado.\n");
 }
 
-
 void dados(){
   int diff;
   int indexIn = -1;
@@ -191,6 +190,7 @@ void massa() {
             break;
     }
 }
+
 void energia(){
     int escolha_entrada, escolha_saida;
     double valor;
@@ -342,6 +342,79 @@ void unidadesDeArea() {
     } while (operacao != 0);
 }
 
+// Função única para conversão de pressão entre todas as unidades
+void pressao() {
+    double valor, resultado;
+    char unidade_inicial, unidade_destino;
+
+    // Entrada do usuário
+    printf("Digite o valor da pressão a ser convertido: ");
+    scanf("%lf", &valor);
+
+    printf("Digite a unidade inicial (P: Pascal, A: atm, B: bar, T: Torr): ");
+    scanf(" %c", &unidade_inicial);
+
+    printf("Digite a unidade de destino (P: Pascal, A: atm, B: bar, T: Torr): ");
+    scanf(" %c", &unidade_destino);
+
+    // Verifica a unidade inicial e realiza a conversão para a unidade de destino
+    if (unidade_inicial == 'P') { // Pascal
+        if (unidade_destino == 'A') { // Pascal para atm
+            resultado = valor / 101325;
+            printf("%.3lf Pa = %.6lf atm\n", valor, resultado);
+        } else if (unidade_destino == 'B') { // Pascal para bar
+            resultado = valor / 100000;
+            printf("%.3lf Pa = %.6lf bar\n", valor, resultado);
+        } else if (unidade_destino == 'T') { // Pascal para Torr
+            resultado = valor / 133.322;
+            printf("%.3lf Pa = %.3lf Torr\n", valor, resultado);
+        } else if (unidade_destino == 'P') { // Pascal para Pascal
+            printf("%.3lf Pa = %.3lf Pa\n", valor, valor);
+        }
+    } else if (unidade_inicial == 'A') { // Atmosfera (atm)
+        if (unidade_destino == 'P') { // atm para Pascal
+            resultado = valor * 101325;
+            printf("%.3lf atm = %.3lf Pa\n", valor, resultado);
+        } else if (unidade_destino == 'B') { // atm para bar
+            resultado = valor * 1.01325;
+            printf("%.3lf atm = %.6lf bar\n", valor, resultado);
+        } else if (unidade_destino == 'T') { // atm para Torr
+            resultado = valor * 760;
+            printf("%.3lf atm = %.3lf Torr\n", valor, resultado);
+        } else if (unidade_destino == 'A') { // atm para atm
+            printf("%.3lf atm = %.3lf atm\n", valor, valor);
+        }
+    } else if (unidade_inicial == 'B') { // Bar
+        if (unidade_destino == 'P') { // bar para Pascal
+            resultado = valor * 100000;
+            printf("%.3lf bar = %.3lf Pa\n", valor, resultado);
+        } else if (unidade_destino == 'A') { // bar para atm
+            resultado = valor / 1.01325;
+            printf("%.3lf bar = %.6lf atm\n", valor, resultado);
+        } else if (unidade_destino == 'T') { // bar para Torr
+            resultado = valor * 750.062;
+            printf("%.3lf bar = %.3lf Torr\n", valor, resultado);
+        } else if (unidade_destino == 'B') { // bar para bar
+            printf("%.3lf bar = %.3lf bar\n", valor, valor);
+        }
+    } else if (unidade_inicial == 'T') { // Torr
+        if (unidade_destino == 'P') { // Torr para Pascal
+            resultado = valor * 133.322;
+            printf("%.3lf Torr = %.3lf Pa\n", valor, resultado);
+        } else if (unidade_destino == 'A') { // Torr para atm
+            resultado = valor / 760;
+            printf("%.3lf Torr = %.6lf atm\n", valor, resultado);
+        } else if (unidade_destino == 'B') { // Torr para bar
+            resultado = valor / 750.062;
+            printf("%.3lf Torr = %.6lf bar\n", valor, resultado);
+        } else if (unidade_destino == 'T') { // Torr para Torr
+            printf("%.3lf Torr = %.3lf Torr\n", valor, valor);
+        }
+    } else {
+        printf("Unidade inválida. Utilize 'P' para Pascal, 'A' para atm, 'B' para bar e 'T' para Torr.\n");
+    }
+}
+
 int main() {
   system("chcp 65001>NULL");
 
@@ -355,6 +428,7 @@ int main() {
   printf("7 - Unidades de Área\n");
   printf("8 - Unidades de Tempo\n");
   printf("9 - Unidades de Tamanho de dados\n");
+  printf("10 - Unidades de Pressão\n");
 
   int option;
   scanf("%d", &option);
@@ -397,6 +471,10 @@ int main() {
   case 9:
     dados();
     break;
+
+  case 10:
+    pressao();/*Gabriel Santos de Lacerda*/
+    break;  
 
   default:
     break;
