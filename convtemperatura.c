@@ -25,7 +25,8 @@ Por exemplo, para converter 40°C para Fahrenheit, temos: F = (9/5) x 40 + 32 = 
 
 */
 
-#include <stdio.h>
+#include <stdio.h> //Biblioteca padrão de entrada e saída
+#include <stdlib.h> //Biblioteca padrão do sistema
 
 //Definição da constante KELVIN, por enquanto em valor inteiro
 #define KELVIN 273
@@ -53,9 +54,16 @@ float converterCelsiusParaFahrenheit(float celsius) {
 int main()
 {
 
+    system("chcp 65001>NULL"); // Comando para Windows mudar o charset para UTF-8
+    
+    // Variáveis para armazenar as temperaturas
     float celsius, fahrenheit, kelvin;
 
-// Solicitar do usuario qual tipo de conversão de temperatura e qual o valor
+    // Limpar a tela
+    system("cls");
+
+
+   // Solicitar do usuario qual tipo de conversão de temperatura e qual o valor
 
    // Solicitar o valor em Celsius ao usuário
     printf("Digite a temperatura em Graus Celsius: ");
