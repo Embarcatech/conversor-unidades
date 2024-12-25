@@ -1,7 +1,6 @@
-#include <stdio.h>
-
-
 /*
+Arquivo inicial para a conversão de temperaturas
+
 ### 4. Temperatura
 
 - Celsius
@@ -9,4 +8,5 @@
 - Kelvin
 
 */
+
 
