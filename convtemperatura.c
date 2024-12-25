@@ -60,6 +60,7 @@ void limparTela() {
 }
 
 
+//função para calcular a temperatura
 void temperatura()
 {
 
@@ -107,7 +108,7 @@ void temperatura()
 
 
 
-
+//função principal
 int main() {
     system("chcp 65001>NULL");
 
