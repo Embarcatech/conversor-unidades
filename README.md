@@ -99,7 +99,7 @@ git clone https://github.com/Embarcatech/conversor-unidades.git
     `6 - Unidades de Energia`\
     `7 - Unidades de Área`\
     `8 - Unidades de Tempo `\
-    `9 - Unidades de Tamanho de dados`
+    `9 - Unidades de Tamanho de dados`\
     `10 - Unidades de Pressão`
 
 3.  Escolha um número correspondente da opção.
