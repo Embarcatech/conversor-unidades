@@ -50,6 +50,15 @@ float converterCelsiusParaFahrenheit(float celsius) {
 }
 
 
+// Função para limpar a tela dependendo do sistema operacional
+void limparTela() {
+    #ifdef _WIN32
+        system("cls"); // Comando para Windows
+    #else
+        system("clear");  // Comando para Linux ou macOS
+    #endif
+}
+
 
 int main()
 {
@@ -60,8 +69,7 @@ int main()
     float celsius, fahrenheit, kelvin;
 
     // Limpar a tela
-    system("cls");
-
+      limparTela();
 
    // Solicitar do usuario qual tipo de conversão de temperatura e qual o valor
 
