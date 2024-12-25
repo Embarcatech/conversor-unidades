@@ -77,7 +77,7 @@ void temperatura()
     printf("Escolha a opção desejada: \n");
     printf("1 - Converter Celsius para Kelvin\n");
     printf("2 - Converter Fahrenheit para Celsius\n");
-    printf("3 - Converter Celsius para Fahrenheit\n");
+    printf("3 - Converter Kelvin para Fahrenheit\n");
     printf("Qualquer outro valor - Sair\n");
     scanf("%d", &escolha);
 
