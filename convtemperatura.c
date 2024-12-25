@@ -39,13 +39,13 @@ float converterCelsiusParaKelvin(float celsius) {
 //Função de calculo de conversão de temperatura de Fahrenheit para Celsius
 //Variavel do tipo float que recebe a temperatura em Fahrenheit
 float converterFahrenheitParaCelsius(float fahrenheit) {
-    return (fahrenheit - 32) * (5 / 9);
+    return (fahrenheit - 32) * (5.0 / 9.0);
 }
 
 //Função de calculo de conversão de temperatura de Celsius para Fahrenheit
 //Variavel do tipo float que recebe a temperatura em Celsius
 float converterCelsiusParaFahrenheit(float celsius) {
-    return (9 / 5) * celsius + 32;
+    return (9.0 / 5.0) * celsius + 32;
 }
 
 
