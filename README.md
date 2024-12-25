@@ -63,6 +63,13 @@ Conversão das unidades:
 - Gigabytes
 - Terabytes
 
+### 10. Pressão 
+
+- Pascal (Pa)
+- Atmosfera (atm)
+- Bar (bar)
+- Torr (mmHg)
+  
 ## Pré-requisitos ✅
 
 - Sistema operacional Windows, Linux ou macOs.
@@ -93,9 +100,10 @@ git clone https://github.com/Embarcatech/conversor-unidades.git
     `7 - Unidades de Área`\
     `8 - Unidades de Tempo `\
     `9 - Unidades de Tamanho de dados`
+    `10 - Unidades de Pressão`
 
-2.  Escolha um número correspondente da opção.
+3.  Escolha um número correspondente da opção.
 
-3.  Siga as intruções do programa para realizar a conversão.
+4.  Siga as intruções do programa para realizar a conversão.
 
 ## Integrantes da equipe 🚀
