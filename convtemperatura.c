@@ -60,7 +60,7 @@ void limparTela() {
 }
 
 
-int main()
+void temperatura()
 {
 
     system("chcp 65001>NULL"); // Comando para Windows mudar o charset para UTF-8
@@ -101,7 +101,17 @@ int main()
 
     return 0;
 
+
 }
 
 
 
+
+
+int main() {
+    system("chcp 65001>NULL");
+
+    limparTela();
+    temperatura();
+    return 0;
+}  
