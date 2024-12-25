@@ -26,6 +26,8 @@ Por exemplo, para converter 40°C para Fahrenheit, temos: F = (9/5) x 40 + 32 = 
 */
 
 #include <stdio.h>
+
+//Definição da constante KELVIN, por enquanto em valor inteiro
 #define KELVIN 273
 
 //Função de calculo de conversão de temperatura de Celsius para Fahrenheit
@@ -34,28 +36,53 @@ float converterCelsiusParaKelvin(float celsius) {
     return celsius + KELVIN;
 }
 
+//Função de calculo de conversão de temperatura de Fahrenheit para Celsius
+//Variavel do tipo float que recebe a temperatura em Fahrenheit
+float converterFahrenheitParaCelsius(float fahrenheit) {
+    return (fahrenheit - 32) * (5 / 9);
+}
+
+//Função de calculo de conversão de temperatura de Celsius para Fahrenheit
+//Variavel do tipo float que recebe a temperatura em Celsius
+float converterCelsiusParaFahrenheit(float celsius) {
+    return (9 / 5) * celsius + 32;
+}
+
 
 
 int main()
 {
 
-//printf("Escolha a unidade de temperatura que deseja converter:\n");
+    float celsius, fahrenheit, kelvin;
 
-//Variaveis de temperatura das unidades Celsius, Fahrenheit e Kelvin
-float celsius, fahrenheit, kelvin; 
+// Solicitar do usuario qual tipo de conversão de temperatura e qual o valor
+
+   // Solicitar o valor em Celsius ao usuário
+    printf("Digite a temperatura em Graus Celsius: ");
+    scanf("%f", &celsius);
+
+    // Solicitar o valor em Fahrenheit ao usuário
+    printf("Digite a temperatura em Graus Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    // Solicitar o valor em Kelvin ao usuário  
+    printf("Digite a temperatura em Kelvin: ");
+    scanf("%f", &kelvin);
+
+    // Exibir o resultado da conversão de Celsius para Kelvin
+    kelvin = converterCelsiusParaKelvin(celsius);
+    printf("A temperatura %.2f em Celsius é %.2f em Kelvin\n", celsius, kelvin);
+
+    // Exibir o resultado da conversão de Fahrenheit para Celsius
+    celsius = converterFahrenheitParaCelsius(fahrenheit);
+    printf("A temperatura %.2f em Fahrenheit é %.2f em Celsius\n", fahrenheit, celsius);
+
+    // Exibir o resultado da conversão de Celsius para Fahrenheit
+    fahrenheit = converterCelsiusParaFahrenheit(celsius);
+    printf("A temperatura %.2f em Celsius é %.2f em Fahrenheit\n", celsius, fahrenheit);
 
 
-printf("Digite a temperatura em Graus Celsius: ");
-scanf("%f", &celsius);
-
-
-// Exibir o resultado da conversão de Celsius para Kelvin
-kelvin = converterCelsiusParaKelvin(celsius);
-printf("A temperatura %.2f em Celsius é %.2f em Kelvin\n", celsius, kelvin);
-
-
-//return 0;
-
+    return 0;
 }
 
 
