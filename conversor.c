@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "interfacetemperatura.h"
 
 void comprimento() {
   double data, result;
@@ -448,7 +449,8 @@ int main() {
     break;
 /*João Vitor Soares Amorim*/ 
   case 4:
-    /* code */
+    temperatura();
+    /* Hugo Santos Dias */
     break;
 
   case 5:
