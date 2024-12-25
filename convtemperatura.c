@@ -26,15 +26,35 @@ Por exemplo, para converter 40°C para Fahrenheit, temos: F = (9/5) x 40 + 32 = 
 */
 
 #include <stdio.h>
+#define KELVIN 273
+
+//Função de calculo de conversão de temperatura de Celsius para Fahrenheit
+//Variavel do tipo float que recebe a temperatura em Celsius
+float converterCelsiusParaKelvin(float celsius) {
+    return celsius + KELVIN;
+}
+
+
 
 int main()
-
 {
 
-printf("Escolha a unidade de temperatura que deseja converter:\n");
+//printf("Escolha a unidade de temperatura que deseja converter:\n");
+
+//Variaveis de temperatura das unidades Celsius, Fahrenheit e Kelvin
+float celsius, fahrenheit, kelvin; 
 
 
-return 0;
+printf("Digite a temperatura em Graus Celsius: ");
+scanf("%f", &celsius);
+
+
+// Exibir o resultado da conversão de Celsius para Kelvin
+kelvin = converterCelsiusParaKelvin(celsius);
+printf("A temperatura %.2f em Celsius é %.2f em Kelvin\n", celsius, kelvin);
+
+
+//return 0;
 
 }
 
