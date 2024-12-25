@@ -65,40 +65,42 @@ int main()
 
     system("chcp 65001>NULL"); // Comando para Windows mudar o charset para UTF-8
     
-    // Variáveis para armazenar as temperaturas
-    float celsius, fahrenheit, kelvin;
+   // Variáveis para armazenar as temperaturas
+    float entradaCelsius, entradaFahrenheit, entradaKelvin;
+    float saidaKelvin, saidaCelsius, saidaFahrenheit;
 
-    // Limpar a tela
-      limparTela();
+   // Limpar a tela
+    limparTela();
 
    // Solicitar do usuario qual tipo de conversão de temperatura e qual o valor
 
    // Solicitar o valor em Celsius ao usuário
     printf("Digite a temperatura em Graus Celsius: ");
-    scanf("%f", &celsius);
+    scanf("%f", &entradaCelsius);
 
     // Solicitar o valor em Fahrenheit ao usuário
     printf("Digite a temperatura em Graus Fahrenheit: ");
-    scanf("%f", &fahrenheit);
+    scanf("%f", &entradaFahrenheit);
 
     // Solicitar o valor em Kelvin ao usuário  
     printf("Digite a temperatura em Kelvin: ");
-    scanf("%f", &kelvin);
+    scanf("%f", &entradaKelvin);
 
     // Exibir o resultado da conversão de Celsius para Kelvin
-    kelvin = converterCelsiusParaKelvin(celsius);
-    printf("A temperatura %.2f em Celsius é %.2f em Kelvin\n", celsius, kelvin);
+    saidaKelvin = converterCelsiusParaKelvin(entradaCelsius);
+    printf("A temperatura %.2f em Celsius é %.2f em Kelvin\n", entradaCelsius, saidaKelvin);
 
     // Exibir o resultado da conversão de Fahrenheit para Celsius
-    celsius = converterFahrenheitParaCelsius(fahrenheit);
-    printf("A temperatura %.2f em Fahrenheit é %.2f em Celsius\n", fahrenheit, celsius);
+    saidaCelsius = converterFahrenheitParaCelsius(entradaFahrenheit);
+    printf("A temperatura %.2f em Fahrenheit é %.2f em Celsius\n", entradaFahrenheit, saidaCelsius);
 
     // Exibir o resultado da conversão de Celsius para Fahrenheit
-    fahrenheit = converterCelsiusParaFahrenheit(celsius);
-    printf("A temperatura %.2f em Celsius é %.2f em Fahrenheit\n", celsius, fahrenheit);
+    saidaFahrenheit = converterCelsiusParaFahrenheit(entradaCelsius);
+    printf("A temperatura %.2f em Celsius é %.2f em Fahrenheit\n", entradaCelsius, saidaFahrenheit);
 
 
     return 0;
+
 }
 
 
