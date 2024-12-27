@@ -416,6 +416,11 @@ void pressao() {
     }
 }
 
+//informa que a função não foi implementada
+void semimplementacao() {
+    printf("Função não implementada\n");
+} 
+
 int main() {
   system("chcp 65001>NULL");
 
@@ -454,7 +459,8 @@ int main() {
     break;
 
   case 5:
-    /* code */
+    semimplementacao();
+    /* sem implementação */
     break;
 
   case 6:
@@ -467,7 +473,8 @@ int main() {
     break;
 
   case 8:
-    /* code */
+    semimplementacao();
+    /* sem implementação */
     break;
 
   case 9:
