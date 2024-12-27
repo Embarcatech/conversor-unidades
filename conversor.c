@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "interfacetemperatura.h"
+#include "funcmassa.h"
 
 void comprimento() {
   double data, result;
@@ -134,62 +135,6 @@ void dados(){
   }
 
   printf("%.5lf %s é igual a %.5lf %s\n", data, typeIn, result, typeOut);
-}
-
-void massa() {
-    int opcao;
-    float valor, resultado;
-
-    printf("Escolha a unidade que deseja converter:\n");
-    printf("1 - Quilograma para Grama\n");
-    printf("2 - Quilograma para Tonelada\n");
-    printf("3 - Grama para Quilograma\n");
-    printf("4 - Grama para Tonelada\n");
-    printf("5 - Tonelada para Quilograma\n");
-    printf("6 - Tonelada para Grama\n");
-    printf("Opcao: ");
-    scanf("%d", &opcao);
-
-    if (opcao < 1 || opcao > 6) {
-        printf("Opção inválida\n");
-        return;
-    }
-
-    printf("Digite o valor a ser convertido: ");
-    scanf("%f", &valor);
-
-    if (valor < 0) {
-        printf("Valor inválido! Deve ser positivo.\n");
-        return;
-    }
-    
-
-    switch (opcao) {
-        case 1:  // Quilograma para Grama
-            resultado = valor * 1000;
-            printf("O valor em gramas é: %.2f\n", resultado);
-            break;
-        case 2:  // Quilograma para Tonelada
-            resultado = valor / 1000;
-            printf("O valor em toneladas é: %.2f\n", resultado);
-            break;
-        case 3:  // Grama para Quilograma
-            resultado = valor / 1000;
-            printf("O valor em quilogramas é: %.2f\n", resultado);
-            break;
-        case 4:  // Grama para Tonelada
-            resultado = valor / 1000000;
-            printf("O valor em toneladas é: %.6f\n", resultado);
-            break;
-        case 5:  // Tonelada para Quilograma
-            resultado = valor * 1000;
-            printf("O valor em quilogramas é: %.2f\n", resultado);
-            break;
-        case 6:  // Tonelada para Grama
-            resultado = valor * 1000000;
-            printf("O valor em gramas é: %.2f\n", resultado);
-            break;
-    }
 }
 
 void energia(){
