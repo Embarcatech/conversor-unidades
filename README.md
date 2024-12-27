@@ -107,3 +107,19 @@ git clone https://github.com/Embarcatech/conversor-unidades.git
 4.  Siga as intruções do programa para realizar a conversão.
 
 ## Integrantes da equipe 🚀
+
+Lider da Equipe: Kleber Marçal
+Demais membros: desenvolvedores e Beta tester
+
+Desenvolvedores
+
+1 - Unidades de comprimento - Kleber Marçal
+2 - Unidades de massa - Jackson Silva dos Santos 
+3 - Unidades de volume  - João Vitor Soares Amorim
+4 - Unidades de Temperatura - Hugo Santos Dias
+5 - Unidades de Velocidade - Jéssica 
+6 - Unidades de Energia - Alinne de Souza Santos Castro
+7 - Unidades de Área - Vinícius 
+8 - Unidades de Tempo - Arthur Galvão
+9 - Unidades de Tamanho de dados - Arthur
+10 - Unidades de pressão - Gabriel Lacerda
